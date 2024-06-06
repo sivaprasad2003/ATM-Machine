@@ -1,0 +1,42 @@
+package banking;
+import java.util.*;
+
+public class repsalct {
+	public static void countRepeaters(int[] a,int size) {
+		int s=1;
+		for(int i=0;i<size;i++) {
+			for(int j=0;j<size;j++) {
+				if(a[i]==a[j] && i!=j) {
+					s++;
+				}
+			}
+			if(s!=1) {
+				System.out.println(s);
+				break;
+			}
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int s=sc.nextInt();
+		int l=0;
+		if(s<0) {
+			System.out.println("Invalid Input");
+		}else {
+			int[] a=new int[s];
+			for(int i=0;i<s;i++) {
+				a[i]=sc.nextInt();
+			    if(a[i]<0) {
+			    	System.out.println("Invalid Input");
+			    	l=1;
+			    	break;
+			    }
+			}
+			if(l==0) {
+				countRepeaters(a,s);
+			}
+		}
+
+	}
+
+}
