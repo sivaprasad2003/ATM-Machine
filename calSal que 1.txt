@@ -1,0 +1,51 @@
+package banking;
+import java.util.*;
+
+class calculateSal1 {
+    private int salary;
+    private int shift;
+    private int saving;
+
+    calculateSal1(int salary, int shift) {
+        this.salary = salary;
+        this.shift = shift;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public int getShift() {
+        return shift;
+    }
+
+    public int getSaving() {
+        return saving;
+    }
+
+    public void calculateSal() {
+        saving = salary - (salary * 50 / 100) + shift * (salary * 2 / 100);
+        System.out.println(saving);
+    }
+}
+
+public class calculateSal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int s = sc.nextInt();
+        int a = sc.nextInt();
+        
+        if (s <= 0) {
+            System.out.println("Salary too small");
+        } else if (s > 8000) {
+            System.out.println("Salary too large");
+        } else if (a <= 0) {
+            System.out.println("Shifts too small");
+        } else {
+            calculateSal1 q = new calculateSal1(s, a);
+            q.calculateSal();
+        }
+
+        sc.close();
+    }
+}
