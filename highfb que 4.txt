@@ -1,0 +1,53 @@
+package banking;
+import java.util.*;
+
+public class highfb {
+	public static void highestFeedBack(int[] a,int[] b,int size) {
+		for(int i=1;i<size;i=i+2) {
+			if(a[i]>b[i]) {
+				System.out.println(a[i-1]+"\n"+a[i]);
+
+			}else if(a[i]==b[i]) {
+				System.out.println(a[i-1]+"\n"+a[i]+"\n"+b[i-1]+"\n"+b[i]);
+			}
+			else {
+				System.out.println(b[i-1]+"\n"+b[i]);
+			}
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int s=sc.nextInt();
+		int l=0;
+		if(s<0) {
+			System.out.println("Invalid array size");
+		}else {
+			int[] a=new int[s];
+			for(int i=0;i<s;i++) {
+				a[i]=sc.nextInt();
+			    if(a[i]<0) {
+			    	System.out.println("Invalid Input");
+			    	l=1;
+			    	break;
+			    }
+			}
+			if(l==0) {
+				int[] b=new int[s];
+				int k=0;
+				for(int i=0;i<s;i++) {
+					b[i]=sc.nextInt();
+					if(b[i]<0) {
+						System.out.println("Invalid Input");
+						k=1;
+						break;
+					}
+				}
+				if(k==0) {
+					highestFeedBack(a,b,s);
+				}
+			}
+		}
+
+	}
+
+}
